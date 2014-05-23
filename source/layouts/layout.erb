@@ -15,18 +15,24 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+        <script src="js/head.js"></script>
     </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-        <![endif]-->
+    <body ng-app="biPoseur" ng-controller="MainController">
+        <header class="hero">
+            <h1>Bi-Poseur</h1>
+            <a href="#">
+                Pay what you want
+                Minimum $1
+                10% goes to charity
+            </a>
+            <button class="video__play" ng-click="playVideo()">Play</button>
+            <div class="video__fade"></div>
+            <iframe ng-if="playing" id="player" class="player" type="text/html" width="100%" height="100%" ng-src="{{videoUrl}}" frameborder="0">
+            </iframe>
+        </header>
 
         <%= yield %>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
