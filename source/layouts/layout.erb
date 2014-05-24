@@ -12,12 +12,13 @@
         <meta name="viewport" content="width=device-width">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
+        
+        <link href='//fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/head.js"></script>
     </head>
-    <body ng-app="biPoseur" ng-controller="MainController">
+    <body>
         <header class="hero">
             <h1>Bi-Poseur</h1>
             <a href="#">
@@ -25,10 +26,7 @@
                 Minimum $1
                 10% goes to charity
             </a>
-            <button class="video__play" ng-click="playVideo()">Play</button>
-            <div class="video__fade"></div>
-            <iframe ng-if="playing" id="player" class="player" type="text/html" width="100%" height="100%" ng-src="{{videoUrl}}" frameborder="0">
-            </iframe>
+            <button class="video__play">Play</button>
         </header>
 
         <%= yield %>

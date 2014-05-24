@@ -85,7 +85,7 @@ textarea {
 .chromeframe {
     margin: 0.2em 0;
     background: #ccc;
-    color: #000;
+    cohlor: #000;
     padding: 0.2em 0;
 }
 
@@ -93,13 +93,36 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html {
+    background: #4a3227;
+    color: #fff;
+}
 
+h1 {
+    color: #c72942;
+    font-family: 'Avenir Next', 'Futura Bold', 'Futura', 'Didact Gothic', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 
+section {
+    margin: 0 auto;
+    max-width: 1024px;
+}
 
+.hero {
+    &--playing {
+        .video {
+            &__fade {
+                opacity: 1;
+            }
+        }
+    }
+}
 
-
-
-
+.video__fade {
+    opacity: 0;
+}
 
 
 
