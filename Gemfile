@@ -3,6 +3,8 @@
 source 'http://rubygems.org'
 
 gem "compass", "1.0.0.alpha.19"
+gem 'scut'
+
 gem "middleman", "~>3.3.2"
 gem "middleman-autoprefixer"
 

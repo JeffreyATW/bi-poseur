@@ -1,3 +1,7 @@
+@import '_scut.scss';
+@import 'colors';
+@import 'fonts';
+
 /*
  * HTML5 Boilerplate
  *
@@ -95,13 +99,13 @@ textarea {
 
 html {
     background: #4a3227;
-    color: #fff;
+    color: $white;
 }
 
 h1 {
     color: #c72942;
     font-family: 'Avenir Next', 'Futura Bold', 'Futura', 'Didact Gothic', sans-serif;
-    font-weight: 700;
+    font-weight: $bold-weight;
     text-transform: uppercase;
 }
 
@@ -110,23 +114,76 @@ section {
     max-width: 1024px;
 }
 
+.btn {
+  appearance: none;
+  background: $black;
+  background: rgba(0,0,0,.8);
+  border: 0;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  //font-family: $primary-font-family;
+  font-weight: $bold-weight;
+  line-height: 50px;
+  margin-top: 1em;
+  padding: 0 12px;
+  text-align: center;
+  transition: background-color .3s ease-out;
+  &:hover {
+    background: #333;
+    background: rgba(51,51,51,.8);
+  }
+}
+
 .hero {
-    &--playing {
-        .video {
-            &__fade {
-                opacity: 1;
-            }
-        }
+  //background-image: image-url('hero/hero0.jpg');
+  box-sizing: border-box;
+  //height: $hero-height;
+  padding-top: 40px;
+  position: relative;
+  &--playing {
+    .player {
+      &__fade {
+        opacity: 1;
+      }
     }
+  }
 }
 
-.video__fade {
-    opacity: 0;
+.hero__play {
+  @include scut-center-absolutely(50px 50px);
 }
 
+.player, .player__fade {
+  background: $black;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+}
 
+.player {
+  z-index: 2;
+}
 
+.player__fade {
+  opacity: 0;
+  transition: opacity 1s linear;
+  z-index: 1;
+}
 
+$player__close-dimensions: 40px;
+.player__close {
+  background: transparent;
+  line-height: $player__close-dimensions;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $player__close-dimensions;
+  z-index: 3;
+}
 
 
 
