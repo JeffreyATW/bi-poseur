@@ -1,6 +1,7 @@
 @import '_scut.scss';
 @import 'colors';
 @import 'fonts';
+@import 'utils';
 
 /*
  * HTML5 Boilerplate
@@ -89,7 +90,7 @@ textarea {
 .chromeframe {
     margin: 0.2em 0;
     background: #ccc;
-    cohlor: #000;
+    color: #000;
     padding: 0.2em 0;
 }
 
@@ -97,21 +98,44 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+* {
+  box-sizing: border-box;
+}
+
 html {
-    background: #4a3227;
-    color: $white;
+  background: #4a3227 image-url('hangman.png') no-repeat 90% 0%;
+  background-attachment: fixed;
+  color: $white;
+}
+
+a {
 }
 
 h1 {
-    color: #c72942;
-    font-family: 'Avenir Next', 'Futura Bold', 'Futura', 'Didact Gothic', sans-serif;
-    font-weight: $bold-weight;
-    text-transform: uppercase;
+  font-family: 'Avenir Next', 'Futura Bold', 'Futura', 'Didact Gothic', sans-serif;
+  font-weight: $bold-weight;
+  text-transform: uppercase;
 }
 
 section {
-    margin: 0 auto;
-    max-width: 1024px;
+  margin: 4em 0;
+  h1, h2, h3 {
+    color: $red;
+  }
+  h3 {
+    margin-top: -1em;
+  }
+  p {
+    text-align: justify;
+  }
+  blockquote {
+    margin: 0;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1024px;
 }
 
 .btn {
@@ -122,10 +146,8 @@ section {
   color: $white;
   cursor: pointer;
   display: inline-block;
-  //font-family: $primary-font-family;
   font-weight: $bold-weight;
   line-height: 50px;
-  margin-top: 1em;
   padding: 0 12px;
   text-align: center;
   transition: background-color .3s ease-out;
@@ -135,11 +157,34 @@ section {
   }
 }
 
+.cta-btn {
+  background: $white;
+  border-radius: 15px;
+  color: $red;
+  font-family: 'Avenir Next Condensed', 'Futura Bold Condensed', 'Futura', 'Didact Gothic', sans-serif;
+  font-weight: $bold-weight;
+  padding: 1em;
+  text-transform: uppercase;
+  transition: color .5s linear;
+  &:hover {
+    color: $black;
+  }
+  &:active {
+    background: $black;
+    color: $white;
+    transition: none;
+  }
+}
+
 .hero {
-  //background-image: image-url('hero/hero0.jpg');
+  background: image-url('hero.jpg') no-repeat 50% 30%;
+  background-size: cover;
   box-sizing: border-box;
-  //height: $hero-height;
-  padding-top: 40px;
+  height: 400px;
+  padding: 40px 40px 0;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1920px;
   position: relative;
   &--playing {
     .player {
@@ -148,46 +193,98 @@ section {
       }
     }
   }
-}
-
-.hero__play {
-  @include scut-center-absolutely(50px 50px);
-}
-
-.player, .player__fade {
-  background: $black;
-  height: 100%;
-  left: 0;
-  top: 0;
-  position: absolute;
-  width: 100%;
+  h1, &__cta {
+    bottom: 20px;
+  }
+  h1 {
+    color: $white;
+    font-size: 6em;
+    left: 40px;
+    margin: 0;
+    position: absolute;
+    span {
+      display: block;
+      line-height: .8em;
+    }
+  }
+  &__bi {
+    font-size: 1.5em;
+  }
+  &__cta {
+    @extend %scut-clearfix;
+    position: absolute;
+    right: 40px;
+  }
+  &__cta-main {    
+    font-size: 2em;
+  }
+  &__cta-detail {
+    &--first {
+      float: left;
+    }
+    &--second {
+      float: right;
+    }
+  }
+  &__play {
+    @include scut-center-absolutely(image-width('play.png') image-height('play.png'));
+    @include scut-image-replace;
+    background: image-url('play.png');
+    border: 0;
+    cursor: pointer;
+    opacity: .75;
+    padding: 0;
+    transition: opacity .5s linear;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 .player {
   z-index: 2;
+  &, &__fade {
+    background: $black;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;    
+  }
+  &__fade {
+    opacity: 0;
+    transition: opacity 1s linear;
+    z-index: 1;    
+  }
+  $player__close-dimensions: 40px;
+  &__close {
+    background: transparent;
+    line-height: $player__close-dimensions;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: $player__close-dimensions;
+    z-index: 3;
+  }
 }
 
-.player__fade {
-  opacity: 0;
-  transition: opacity 1s linear;
-  z-index: 1;
+.separator {
+  background: image-url('separator.png') no-repeat 50% 0%;
+  border: 0;
+  height: image-height('separator.png');
+  margin: 0 0 -4em;
 }
 
-$player__close-dimensions: 40px;
-.player__close {
-  background: transparent;
-  line-height: $player__close-dimensions;
-  margin: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: $player__close-dimensions;
-  z-index: 3;
+.people {
+  &__section {
+    float: left;
+    width: 48%;
+    &:last-child {
+      margin-left: 4%;
+    }
+  }
 }
-
-
-
-
 
 /* ==========================================================================
    Helper classes

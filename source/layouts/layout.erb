@@ -20,14 +20,15 @@
     </head>
     <body>
         <header class="hero">
-            <h1>Bi-Poseur</h1>
-            <a href="#">
-                Pay what you want
-                Minimum $1
-                10% goes to charity
+            <h1><span class="hero__bi">Bi-</span><span class="hero__pos">Pos</span><span class="hero__eur">eur</span></h1>
+            <a href="#" class="hero__cta cta-btn">
+                <div class="hero__cta-main">Pay what you want</div>
+                <div class="hero__cta-detail hero__cta-detail--first">Minimum $1</div>
+                <div class="hero__cta-detail hero__cta-detail--second">10% goes to charity</div>
             </a>
             <button class="hero__play">Play</button>
         </header>
+        <hr class="separator">
 
         <%= yield %>
 
