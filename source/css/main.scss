@@ -122,9 +122,10 @@ h1 {
   text-transform: uppercase;
 }
 
+$section-width: 1024px;
 section {
   margin: 4em auto;
-  max-width: 1024px;
+  max-width: $section-width;
   padding: 0 20px;
   h1, h2, h3 {
     color: $red;
@@ -135,6 +136,10 @@ section {
   p {
     text-align: justify;
   }
+}
+
+hr {
+  border: none;
 }
 
 .btn {
@@ -192,7 +197,7 @@ section {
       }
     }
     .hero__cta {
-      bottom: -120px;
+      bottom: -140px;
     }
   }
   h1, &__cta {
@@ -220,11 +225,12 @@ section {
     z-index: 2;
   }
   &__cta-main {    
-    font-size: 2em;
+    font-size: 3em;
   }
   &__cta-detail {
     &--first {
       float: left;
+      margin-right: .7em;
     }
     &--second {
       float: right;
@@ -275,7 +281,6 @@ section {
 
 .separator {
   background: url('../img/separator.png') no-repeat 50% 0%;
-  border: 0;
   height: image-height('separator.png');
   margin: 0 0 -4em; 
 }
@@ -294,16 +299,43 @@ section {
 
 .people {
   @extend %scut-clearfix;
+  h1 {
+    margin-bottom: 0;
+  }
+  &__sub-header {
+    margin-top: 0;
+  }
   &__section {
     float: left;
     width: 48%;
-    &:last-child {
+    &--second {
       margin-left: 4%;
     }
+  }
+  &__kickstarter-header {
+    clear: both;
+  }
+}
+
+.bart {
+  overflow: hidden;
+  position: relative;
+  &, &:before {
+    height: image-height('train.png');
+  }
+  &:before {
+    background: url('../img/train.png') no-repeat;
+    content: '';
+    display: block;
+    left: 50%;
+    margin-left: -$section-width / 2 + 20px;
+    position: absolute;
+    width: 100%;
   }
 }
 
 .testimonials {
+  margin-top: 20px;
   text-align: center;
   blockquote {
     margin: 0 0 2em;
@@ -323,120 +355,65 @@ section {
   }
 }
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Image replacement
- */
-
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
+@media only screen and (max-width: 1024px) {
+  .bart {
+    &:before {
+      background-position: 20px 0;
+      margin: 0;
+      position: static;
+    }
+  }
 }
 
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 100%;
+@media only screen and (max-width: 768px) {
+  .hero__cta {
+    bottom: -140px;
+  }
 }
 
-/*
- * Hide from both screenreaders and browsers: h5bp.com/u
- */
-
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
-
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-/*
- * Hide visually and from screenreaders, but maintain layout
- */
-
-.invisible {
-    visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-
-.clearfix {
-    *zoom: 1;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   Theses examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min-resolution: 144dpi) {
-    /* Style adjustments for high resolution devices */
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  .hero {
+    text-align: center;
+    h1 {
+      bottom: auto;
+      top: 20px;
+      font-size: 3em;
+      span {
+        display: inline;
+      }
+    }
+    &__bi {
+      font-size: 1em;
+    }
+    &__cta {
+      display: inline-block;
+      position: static;
+      margin-top: 380px;
+    }
+    &__cta-main {
+      font-size: 2em;
+    }
+  }
+  .description {
+    &__pills {
+      &:before {
+        display: block;
+        float: none;
+      }
+    }
+  }
+  .people {
+    &__section {
+      float: none;
+      width: auto;
+      &--second {
+        margin: 0;
+      }
+    }
+  }
 }
 
 /* ==========================================================================
