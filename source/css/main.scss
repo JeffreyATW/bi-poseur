@@ -257,11 +257,7 @@ $hero-height: 460px;
   z-index: 2;
   &, &__fade {
     background: $black;
-    height: 100%;
-    left: 0;
-    top: 0;
-    position: absolute;
-    width: 100%;    
+    @include scut-fill(true);  
   }
   &__fade {
     opacity: 0;
