@@ -1,1 +1,1 @@
-//= require 'vendor/modernizr-2.6.1.min'
+//= require 'vendor/modernizr.custom'
