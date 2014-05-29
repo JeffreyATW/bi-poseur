@@ -3,13 +3,13 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
-
-# THANKS
-
-    <name>
+    Jeffrey Carl Faden -- Developer -- http://jeffreyatw.com
+    Paolo Sambrano -- Writer -- https://twitter.com/paolo
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
     jQuery, Modernizr
+    Normalize.css
+    HTML5 Boilerplate
+    Middleman

@@ -120,7 +120,9 @@ h1 {
 }
 
 section {
-  margin: 4em 0;
+  margin: 4em auto;
+  max-width: 1024px;
+  padding: 0 20px;
   h1, h2, h3 {
     color: $red;
   }
@@ -130,12 +132,6 @@ section {
   p {
     text-align: justify;
   }
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 1024px;
-  padding: 0 20px;
 }
 
 .btn {
@@ -166,7 +162,6 @@ section {
   padding: 1em;
   text-decoration: none;
   text-transform: uppercase;
-  transition: color .5s linear;
   &:hover {
     color: $black;
   }
@@ -218,7 +213,7 @@ section {
     @extend %scut-clearfix;
     position: absolute;
     right: 40px;
-    transition: bottom 1s ease;
+    transition: bottom 1s ease, color .5s linear;
     z-index: 2;
   }
   &__cta-main {    
@@ -320,6 +315,9 @@ section {
 .final-cta {
   font-size: 2em;
   text-align: center;
+  &__cta {
+    transition: color .5s linear;
+  }
 }
 
 /* ==========================================================================
