@@ -1,9 +1,3 @@
 @mixin image-dimensions($file) {
-  height: image-height($file);
-  width: image-width($file);
-}
-
-@mixin image-block($file) {
-  background: image-url($file);
-  @include image-dimensions($file);
+  @include scut-size(image-width($file) image-height($file));
 }
