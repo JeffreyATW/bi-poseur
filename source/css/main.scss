@@ -181,11 +181,12 @@ hr {
   }
 }
 
+$hero-height: 460px;
 .hero {
   background: url('../img/hero.jpg') no-repeat 50% 30%;
   background-size: cover;
   box-sizing: border-box;
-  height: 400px;
+  height: $hero-height;
   padding: 40px 40px 0;
   position: relative;
   margin: 0 auto;
@@ -382,6 +383,9 @@ hr {
       bottom: auto;
       top: 20px;
       font-size: 3em;
+      left: 0;
+      text-align: center;
+      width: 100%;
       span {
         display: inline;
       }
@@ -392,7 +396,7 @@ hr {
     &__cta {
       display: inline-block;
       position: static;
-      margin-top: 380px;
+      margin-top: $hero-height - 20px;
     }
     &__cta-main {
       font-size: 2em;
