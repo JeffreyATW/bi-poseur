@@ -105,7 +105,7 @@ textarea {
 html {
   background: #4a3227 url('../img/hangman.png') no-repeat 90% 0%;
   background-attachment: fixed;
-  font-family: 'Avenir Next', 'Futura', 'Didact Gothic', sans-serif;
+  font-family: 'Avenir Next', 'Futura', 'Nunito', sans-serif;
   color: $white;
 }
 
@@ -113,8 +113,11 @@ a {
   color: $white;
 }
 
+h1, h2, h3 {
+  font-family: 'Avenir Next', 'Futura Bold', 'Futura', sans-serif;
+}
+
 h1 {
-  font-family: 'Avenir Next', 'Futura Bold', 'Futura', 'Didact Gothic', sans-serif;
   font-weight: $bold-weight;
   text-transform: uppercase;
 }
@@ -157,7 +160,7 @@ section {
   background: $white;
   border-radius: 15px;
   color: $red;
-  font-family: 'Avenir Next Condensed', 'Futura Bold Condensed', 'Futura', 'Didact Gothic', sans-serif;
+  font-family: 'Avenir Next Condensed', 'Futura Bold Condensed', 'Futura', sans-serif;
   font-weight: $bold-weight;
   padding: 1em;
   text-decoration: none;
