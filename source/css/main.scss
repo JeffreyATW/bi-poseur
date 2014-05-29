@@ -99,16 +99,18 @@ textarea {
    ========================================================================== */
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 
 html {
-  background: #4a3227 image-url('hangman.png') no-repeat 90% 0%;
+  background: #4a3227 url('../img/hangman.png') no-repeat 90% 0%;
   background-attachment: fixed;
+  font-family: 'Avenir Next', 'Futura', 'Didact Gothic', sans-serif;
   color: $white;
 }
 
 a {
+  color: $white;
 }
 
 h1 {
@@ -128,14 +130,12 @@ section {
   p {
     text-align: justify;
   }
-  blockquote {
-    margin: 0;
-  }
 }
 
 .container {
   margin: 0 auto;
   max-width: 1024px;
+  padding: 0 20px;
 }
 
 .btn {
@@ -164,6 +164,7 @@ section {
   font-family: 'Avenir Next Condensed', 'Futura Bold Condensed', 'Futura', 'Didact Gothic', sans-serif;
   font-weight: $bold-weight;
   padding: 1em;
+  text-decoration: none;
   text-transform: uppercase;
   transition: color .5s linear;
   &:hover {
@@ -177,7 +178,7 @@ section {
 }
 
 .hero {
-  background: image-url('hero.jpg') no-repeat 50% 30%;
+  background: url('../img/hero.jpg') no-repeat 50% 30%;
   background-size: cover;
   box-sizing: border-box;
   height: 400px;
@@ -191,6 +192,9 @@ section {
       &__fade {
         opacity: 1;
       }
+    }
+    .hero__cta {
+      bottom: -120px;
     }
   }
   h1, &__cta {
@@ -214,6 +218,8 @@ section {
     @extend %scut-clearfix;
     position: absolute;
     right: 40px;
+    transition: bottom 1s ease;
+    z-index: 2;
   }
   &__cta-main {    
     font-size: 2em;
@@ -229,7 +235,7 @@ section {
   &__play {
     @include scut-center-absolutely(image-width('play.png') image-height('play.png'));
     @include scut-image-replace;
-    background: image-url('play.png');
+    background: url('../img/play.png');
     border: 0;
     cursor: pointer;
     opacity: .75;
@@ -270,13 +276,26 @@ section {
 }
 
 .separator {
-  background: image-url('separator.png') no-repeat 50% 0%;
+  background: url('../img/separator.png') no-repeat 50% 0%;
   border: 0;
   height: image-height('separator.png');
-  margin: 0 0 -4em;
+  margin: 0 0 -4em; 
+}
+
+.description {
+  &__pills {
+    &:before {
+      background: url('../img/pills.png');
+      content: '';
+      float: right;
+      @include image-dimensions('pills.png');
+      margin: 0 0 1em 2em;
+    }
+  }
 }
 
 .people {
+  @extend %scut-clearfix;
   &__section {
     float: left;
     width: 48%;
@@ -284,6 +303,23 @@ section {
       margin-left: 4%;
     }
   }
+}
+
+.testimonials {
+  text-align: center;
+  blockquote {
+    margin: 0 0 2em;
+  }
+  p {
+    font-size: 1.25em;
+    margin-bottom: .5em;
+    text-align: center;
+  }
+}
+
+.final-cta {
+  font-size: 2em;
+  text-align: center;
 }
 
 /* ==========================================================================

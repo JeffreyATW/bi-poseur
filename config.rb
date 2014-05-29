@@ -4,7 +4,8 @@
 
 # Change Compass configuration
 # compass_config do |config|
-#   config.output_style = :compact
+#   config.http_path = ''
+#   config.relative_assets = true
 # end
 
 ###
