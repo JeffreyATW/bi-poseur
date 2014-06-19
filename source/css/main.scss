@@ -280,7 +280,7 @@ $hero-height: 460px;
 .separator {
   background: url('../img/separator.png') no-repeat 50% 0%;
   height: image-height('separator.png');
-  margin: 0 0 -4em; 
+  margin: 0 0 -3em; 
 }
 
 .description {
@@ -295,8 +295,28 @@ $hero-height: 460px;
   }
 }
 
+.details {
+  text-align: center;
+  ul {
+    @include scut-list-unstyled(false);
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
 .people {
   @extend %scut-clearfix;
+  img {
+    float: left;
+    margin: 0 1em 1em 0;
+  }
+  small {
+    clear: right;
+    float: right;
+    text-align: right;
+    width: 200px;
+  }
   h1 {
     margin-bottom: 0;
   }
@@ -306,12 +326,18 @@ $hero-height: 460px;
   &__section {
     float: left;
     width: 48%;
+    &--first {
+      clear: left;
+    }
     &--second {
       margin-left: 4%;
     }
-  }
-  &__kickstarter-header {
-    clear: both;
+    img {
+      float: right;
+    }
+    img, small {
+      margin: 0 0 .5em 1em;      
+    }
   }
 }
 
@@ -345,8 +371,22 @@ $hero-height: 460px;
   }
 }
 
+.credits {
+  @extend %scut-clearfix;
+  &__main, &__kickstarter {
+    float: left;
+    width: 50%;
+  }
+  &__kickstarter {
+    h2 {
+      margin-top: 0;
+    }
+  }
+}
+
 .final-cta {
   font-size: 2em;
+  margin-top: 2em;
   text-align: center;
   &__cta {
     transition: color .5s linear;
