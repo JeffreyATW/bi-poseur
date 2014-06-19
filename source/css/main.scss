@@ -303,6 +303,9 @@ $hero-height: 460px;
     font-weight: bold;
     text-transform: uppercase;
   }
+  li {
+    margin: .5em 0;
+  }
 }
 
 .people {
@@ -453,6 +456,20 @@ $hero-height: 460px;
       &--second {
         margin: 0;
       }
+    }
+    img, small {
+      display: block;
+      float: none;
+      margin: 0 0 .5em;
+    }
+  }
+  .credits {
+    &__main, &__kickstarter {
+      float: none;
+      width: auto;
+    }
+    h2 {
+      margin-top: 1.5em;
     }
   }
 }
