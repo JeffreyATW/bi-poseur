@@ -1,3 +1,0 @@
-@mixin image-dimensions($file) {
-  @include scut-size(image-width($file) image-height($file));
-}
