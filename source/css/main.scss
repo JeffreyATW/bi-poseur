@@ -213,12 +213,12 @@ $hero-height: 460px;
     bottom: 20px;
     position: absolute;
     right: 20px;
-    width: 600px;
   }
   &__cta {
     bottom: 0;
     @extend %scut-clearfix;
     float: right;
+    margin-left: 2em;
     position: relative;
     transition: bottom 1s ease, color .5s linear;
     z-index: 2;
