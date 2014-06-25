@@ -214,13 +214,15 @@ $hero-height: 460px;
     position: absolute;
     right: 20px;
   }
+  &__cta, &__trailer {
+    transition: bottom 1s ease, color .5s linear;
+  }
   &__cta {
     bottom: 0;
     @extend %scut-clearfix;
     float: right;
     margin-left: 2em;
     position: relative;
-    transition: bottom 1s ease, color .5s linear;
     z-index: 2;
   }
   &__trailer {
