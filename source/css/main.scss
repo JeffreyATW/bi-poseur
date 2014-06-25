@@ -24,9 +24,10 @@ textarea {
     color: #222;
 }
 
+$body-font-size: 16px;
+$body-line-height: 1.4;
 body {
-    font-size: 1em;
-    line-height: 1.4;
+  line-height: $body-line-height;
 }
 
 /*
@@ -145,21 +146,8 @@ hr {
 
 .btn {
   appearance: none;
-  background: $black;
-  background: rgba(0,0,0,.8);
-  border: 0;
-  color: $white;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: $bold-weight;
-  line-height: 50px;
-  padding: 0 12px;
-  text-align: center;
-  transition: background-color .3s ease-out;
-  &:hover {
-    background: #333;
-    background: rgba(51,51,51,.8);
-  }
+  border: none;
+  outline: none;
 }
 
 .cta-btn {
@@ -168,7 +156,7 @@ hr {
   color: $red;
   font-family: 'Avenir Next Condensed', 'Futura Bold Condensed', 'Futura', sans-serif;
   font-weight: $bold-weight;
-  padding: 1em;
+  padding: $body-font-size;
   text-decoration: none;
   text-transform: uppercase;
   &:hover {
@@ -202,7 +190,7 @@ $hero-height: 460px;
       bottom: -140px;
     }
   }
-  h1, &__cta {
+  h1 {
     bottom: 20px;
   }
   h1 {
@@ -219,15 +207,27 @@ $hero-height: 460px;
   &__bi {
     font-size: 1.5em;
   }
+  $cta-font-size: 2em;
+  &__buttons {
+    bottom: 20px;
+    @extend %scut-clearfix;
+    @include scut-center-absolutely(600px n);
+  }
   &__cta {
     @extend %scut-clearfix;
-    position: absolute;
-    right: 40px;
+    float: right;
     transition: bottom 1s ease, color .5s linear;
     z-index: 2;
   }
-  &__cta-main {    
-    font-size: 3em;
+  &__trailer {
+    float: left;
+    line-height: ($body-font-size * $body-line-height + $body-font-size * $body-line-height * scut-strip-unit($cta-font-size))
+  }
+  &__cta-main, &__trailer {
+    font-size: $cta-font-size;
+  }
+  &__cta-main {
+    text-align: center;
   }
   &__cta-detail {
     &--first {
@@ -267,6 +267,8 @@ $hero-height: 460px;
   $player__close-dimensions: 40px;
   &__close {
     background: transparent;
+    color: white;
+    font-weight: bold;
     line-height: $player__close-dimensions;
     margin: 0;
     position: absolute;
@@ -397,6 +399,18 @@ $hero-height: 460px;
 }
 
 @media only screen and (max-width: 1024px) {
+  .hero {
+    &__buttons {
+      left: 0;
+      margin: 0;
+      width: 100%;
+    }
+    &__trailer, &__cta {
+      display: table;
+      float: none;
+      margin: 1em auto 0;
+    }
+  }
   .bart {
     &:before {
       background-position: 20px 0;
@@ -407,15 +421,6 @@ $hero-height: 460px;
 }
 
 @media only screen and (max-width: 768px) {
-  .hero__cta {
-    bottom: -140px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
   .hero {
     text-align: center;
     h1 {
@@ -432,14 +437,12 @@ $hero-height: 460px;
     &__bi {
       font-size: 1em;
     }
-    &__cta {
-      display: inline-block;
-      position: static;
-      margin-top: $hero-height - 20px;
-    }
-    &__cta-main {
-      font-size: 2em;
-    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 14px;
   }
   .description {
     &__pills {

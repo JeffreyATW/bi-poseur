@@ -5,7 +5,7 @@
 (function () {
   var $hero = $('.hero');
   window.onYouTubeIframeAPIReady = function () {
-    $('.hero__play').on('click', function (e) {
+    $('.hero__trailer').on('click', function (e) {
       var player,
         $playerClose = $('<button class="btn player__close">&times;</button>'),
         $playerFade = $('<div class="player__fade"></div>'),
