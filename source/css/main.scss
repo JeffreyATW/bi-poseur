@@ -316,6 +316,14 @@ $hero-height: 460px;
   }
 }
 
+.live-through-this {
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
+
 .people {
   @extend %scut-clearfix;
   img {
