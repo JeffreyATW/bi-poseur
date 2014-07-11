@@ -3,7 +3,7 @@
 //= require vendor/bootstrap.custom
 
 (function () {
-  var $hero = $('.hero');
+  /*var $hero = $('.hero');
   window.onYouTubeIframeAPIReady = function () {
     $('.hero__trailer').on('click', function (e) {
       var player,
@@ -51,4 +51,10 @@
     });
   };
   $('script').first().before('<script src="' + window.location.protocol + '//www.youtube.com/iframe_api">');
+  */
+  var comingSoon = function () {
+    alert('Coming soon!');
+    return false;
+  }
+  $('.hero__trailer, .cta-btn').on('click', comingSoon);
 }());
