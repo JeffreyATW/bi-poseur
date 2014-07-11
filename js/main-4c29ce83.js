@@ -10771,7 +10771,7 @@ return jQuery;
 
 
 (function () {
-  var $hero = $('.hero');
+  /*var $hero = $('.hero');
   window.onYouTubeIframeAPIReady = function () {
     $('.hero__trailer').on('click', function (e) {
       var player,
@@ -10819,4 +10819,10 @@ return jQuery;
     });
   };
   $('script').first().before('<script src="' + window.location.protocol + '//www.youtube.com/iframe_api">');
+  */
+  var comingSoon = function () {
+    alert('Coming soon!');
+    return false;
+  }
+  $('.hero__trailer, .cta-btn').on('click', comingSoon);
 }());
