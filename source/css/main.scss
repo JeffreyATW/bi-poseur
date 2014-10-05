@@ -260,6 +260,7 @@ $hero-height: 460px;
 }
 
 .player {
+  border: 0;
   z-index: 2;
   &, &__fade {
     background: $black;
