@@ -11080,14 +11080,14 @@ var Froogaloop = (function(){
         $hero.removeClass('hero--playing');
       },
       appendPlayer = function () {
-        $hero.append($iframe).append($playerClose)
+        $hero.append($iframe).append($playerClose);
 
         $playerClose.on('click', destroyPlayer);
 
         player = $f($iframe[0]);
 
         player.addEvent('ready', function () {
-          player.play();
+          player.api('play');
         });
 
         player.addEvent('finish', destroyPlayer);
