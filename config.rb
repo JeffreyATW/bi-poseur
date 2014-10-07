@@ -65,7 +65,8 @@ configure :build do
   # activate :minify_javascript
 
   # Enable cache buster
-  activate :asset_hash
+  # Ignore hero image so it can be used as a FB image
+  activate :asset_hash, :ignore => [/^img\/hero\.jpg/]
 
   # Use relative URLs
   # activate :relative_assets
