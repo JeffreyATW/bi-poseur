@@ -47,10 +47,4 @@
         appendPlayer();
     }, 1);
   });
-
-  var comingSoon = function () {
-    alert('Coming soon!');
-    return false;
-  };
-  $('.hero__cta').on('click', comingSoon);
 }());
